@@ -10,7 +10,6 @@
 ;; - a commented line starts with ;;
 
 ;; Live-reload the configuration with Space+Backspace (requires layer-taps).
-
 ;; Timing variables for tap-hold effects.
 (defvar
   ;; The key must be pressed twice in 200ms to enable repetitions.
@@ -38,8 +37,8 @@
 ;; `Base` layer: standard or dual keys? (layer-taps, homerow mods?)
 ;; If you just want angle mod, you still have to enable the standard base.
 
-(include deflayer/base.kbd)  ;; standard keyboard behavior
-;; (include deflayer/base_lt.kbd)  ;; layer-taps on both thumb keys
+;; (include deflayer/base.kbd)  ;; standard keyboard behavior
+(include deflayer/base_lt.kbd)  ;; layer-taps on both thumb keys
 ;; (include deflayer/base_lt_hrm.kbd)  ;; layer-taps + home-row mods
 
 ;; Note: not enabling layer-taps here makes the rest of the file useless.
@@ -48,8 +47,8 @@
 ;;-----------------------------------------------------------------------------
 ;; `Symbols` layer
 
-(include deflayer/symbols_noop.kbd)  ;; AltGr stays as-is
-;; (include deflayer/symbols_lafayette.kbd)  ;; AltGr programmation layer like Ergo‑L
+;; (include deflayer/symbols_noop.kbd)  ;; AltGr stays as-is
+(include deflayer/symbols_lafayette.kbd)  ;; AltGr programmation layer like Ergo‑L
 ;; (include deflayer/symbols_noop_num.kbd)  ;; AltGr stays as-is + NumRow layers
 ;; (include deflayer/symbols_lafayette_num.kbd)  ;; AltGr prog layer + NumRow layers
 
@@ -64,20 +63,21 @@
 ;; Mapped on [Space]+[P] in both navigation layers.
 
 ;; (defalias run M-p)  ;; [Command]-[P]
-(defalias run XX)  ;; do nothing
+(defalias run M-h)  ;; do nothing
 
 
 ;;-----------------------------------------------------------------------------
 ;; Aliases for `Symbols` and `Navigation` layers
 ;; Depends on PC/Mac and keyboard layout
 
-(include defalias/ergol_pc.kbd)  ;; Ergo‑L PC
+;; (include defalias/ergol_pc.kbd)  ;; Ergo‑L PC
 ;; (include defalias/qwerty-lafayette_pc.kbd)  ;; Qwerty‑Lafayette PC
 ;; (include defalias/qwerty_pc.kbd)  ;; Qwerty / Colemak PC
 ;; (include defalias/qwerty_mac.kbd)  ;; Qwerty / Colemak Mac
 ;; (include defalias/azerty_pc.kbd)  ;; Azerty PC
 ;; (include defalias/qwertz_pc.kbd)  ;; Qwertz PC
 ;; (include defalias/bepo_pc.kbd)  ;; Bépo PC
+(include defalias/bepolar_pc.kbd)  ;; Bepolar PC
 ;; (include defalias/optimot_pc.kbd)  ;; Optimot PC
 
 ;;-----------------------------------------------------------------------------
@@ -89,6 +89,7 @@
   ;; Fixes altgr for Windows (see Arsenik issue #22)
   process-unmapped-keys yes
   windows-altgr cancel-lctl-press
+  linux-dev /dev/input/by-id/usb-04d9_USB_Keyboard-event-kbd
 )
 
 ;; vim: set ft=lisp
