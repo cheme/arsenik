@@ -2,6 +2,7 @@
 
 ;; TODO another @ : this one is unreachable from altgr maybe `, but would like to keep layer unchanged.
 ;; TODO maybe lalt to other layer
+;; TODO maybe tapdance on ! (likely just add in underlaying config).
 
 (deflayer symbols
   AG-1 AG-2 AG-3 AG-4 AG-5 XX   AG-6 AG-7 AG-8 AG-9 AG-0

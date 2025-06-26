@@ -8,6 +8,12 @@
             @alt          @nav            @sym
 )
 
+;; TODO switch space and altgr layer?? or TODO alt gr also working as seq so can release to type awkwards chars.
+
+;; TODO some easy to access numrow , maybe altgr then alt but what to hold?? should just
+taphold a key that got no use repeating (both little finger ?? ala homerow: sounds good but maybe a bit slow for vim like use: should be under space? then a locked nav layer accessed under space something: sounds good).
+
+
 ;; Timing variables are defined in `kanata.kbd` file.
 
 (defalias
@@ -16,8 +22,11 @@
 
   ;; Space-cadet thumb keys: Alt/BackSpace, AltGr/Enter.
   ;; Acts as a modifier by default, or as BackSpace/Enter when tapped separately.
-  alt (tap-hold-press $tap_timeout $hold_timeout bspc lsft)
   sym (tap-hold-press $tap_timeout $hold_timeout ret (layer-while-held symbols))
+  alt (tap-hold-press $tap_timeout $hold_timeout bspc lsft)
+  ;; TODO tap-hold of alt + altgr with alt press first (otherwhise it is altgr layer: avoid
+  ;; having a leftshift layer: actually maybe lshift + altgr) -> two layers.
+  ;; A-altgr or S-altgr ???
 )
 
 ;; vim: set ft=lisp
