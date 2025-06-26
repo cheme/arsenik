@@ -1,5 +1,8 @@
 ;; Symbol layer: Lafayette/Ergo‑L AltGr programmation layer for the masses!
 
+;; TODO another @ : this one is unreachable from altgr maybe `, but would like to keep layer unchanged.
+;; TODO maybe lalt to other layer
+
 (deflayer symbols
   AG-1 AG-2 AG-3 AG-4 AG-5 XX   AG-6 AG-7 AG-8 AG-9 AG-0
   @^   @<   @>   @$   @%        @@   @&   @*   @'   @`
